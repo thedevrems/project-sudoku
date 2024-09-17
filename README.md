@@ -1,59 +1,57 @@
-# Raid Sudoku - Nantes Ynov Campus
+# Sudoku Project
 
-## Description du Projet
+## Project Description
 
-Ce projet a pour objectif de résoudre un puzzle de Sudoku en utilisant l'algorithme de **retour sur trace** (backtracking), implémenté en **Golang**. Le retour sur trace est une méthode de recherche en profondeur, souvent employée dans la résolution de puzzles comme le Sudoku, où chaque cellule est testée pour une valeur valide. Ce projet vise à démontrer cette technique en trouvant la solution pour n'importe quelle grille de Sudoku valide.
+This project aims to solve a Sudoku puzzle using the **backtracking** algorithm, implemented in **Golang**. Backtracking is a depth-first search method often employed in solving puzzles like Sudoku, where each cell is tested for a valid value. This project demonstrates this technique by finding the solution for any valid Sudoku grid.
 
+## Features
 
-## Fonctionnalités
+- Ability to solve standard 9x9 grids.
+- Display of the Sudoku if a solution is found.
+- Error handling.
+- Verification of row, column, and sub-grid (3x3 regions) constraints.
 
-- Possibilité de résoudre des grilles standard (9x9).
-- Affichage du Sudoku s'il y a une solution
-- Gestion des Erreurs
-- Vérification des contraintes de lignes, colonnes et sous-grilles (régions 3x3).
+## Algorithm Used
 
-## Algorithme Utilisé
+We use the **backtracking** algorithm, which follows this process:
 
-Nous utilisons l'algorithme de **retour sur trace** (backtracking), qui suit ce processus :
+1. Each empty cell __(an empty cell is represented by a ".")__ is visited one by one.
+2. A number between 1 and 9 is placed in the cell, and the program checks if this number respects the Sudoku rules.
+3. If a constraint is violated (row, column, or sub-grid), the program tries the next number.
+4. If no number works for a cell, the program backtracks to the previous cell and increments its value.
+5. This process continues until the entire grid is solved.
 
-1. Chaque cellule vide __(une cellule vide est représenté par un ".")__ est visitée une par une.
-2. Un chiffre entre 1 et 9 est placé dans la cellule, et le programme vérifie si ce chiffre respecte les règles du Sudoku.
-3. Si une contrainte est violée (ligne, colonne ou sous-grille), le programme essaye le chiffre suivant.
-4. Si aucun chiffre ne fonctionne pour une cellule, le programme revient à la cellule précédente et incrémente la valeur de cette cellule.
-5. Ce processus continue jusqu'à ce que la grille entière soit résolue.
+The algorithm guarantees to find a solution; otherwise, an error will be displayed on the console.
 
-L'algorithme garantit de trouver une solution sinon dans le cas contraire, la console affichera une erreur
+## Prerequisites
 
-## Prérequis
+Before running the project, ensure that the following are installed on your machine:
 
-Avant d'exécuter le projet, assurez-vous que les éléments suivants sont installés sur votre machine :
-
-- **Golang** (version 1.23 ou plus récente)
-
-- **Git** pour cloner le dépôt
+- **Golang** (version 1.23 or later)
+- **Git** to clone the repository
 
 ## Installation
 
-Pour installer et exécuter le projet, suivez les étapes ci-dessous :
+To install and run the project, follow these steps:
 
-1. Clonez le dépôt du projet à l'aide de Git :
+1. Clone the project repository using Git:
    ```bash
-   git clone https://ytrack.learn.ynov.com/git/gremy/raid-sudoku.git
+   git clone https://ytrack.learn.ynov.com/git/gremy/raid-sudoku
    ```
-## Test notre projet:
-Voici quelques commandes pour tester notre projet :
+## Testing the Project:
+Here are some commands to test our project :
 
-1. Sudoku Réalisable
+1. Solvable Sudoku
 
     ```bash
     go run . ".96.4...1" "1...6...4" "5.481.39." "..795..43" ".3..8...." "4.5.23.18" ".1.63..59" ".59.7.83." "..359...7"
     ```
-2. Sudoku Non Réalisable
+2. Unsolvable Sudoku
     ```bash
     go run . 1 2 3 4
     go run .
     go run . ".96.4...1" "1...6.1.4" "5.481.39." "..795..43" ".3..8...." "4.5.23.18" ".1.63..59" ".59.7.83." "..359...7"
     ```
 
-Attention les commandes doivent être réalisés dans le dossier main du projet
+Please note that the commands should be run in the main project directory !
 
