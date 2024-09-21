@@ -15,7 +15,7 @@ func ConvertStringToTab(str1 string) []string {
 	var tab []string
 	for _, ch := range str1 {
 		// If the character is valid, add it to the slice
-		if ch == '.' || (ch <= '9' && ch >= '0') {
+		if ch == '.' || (ch <= '9' && ch >= '1') {
 			tab = append(tab, string(ch))
 		} else {
 			return nil
