@@ -36,7 +36,7 @@ To install and run the project, follow these steps:
 
 1. Clone the project repository using Git:
    ```bash
-   git clone https://ytrack.learn.ynov.com/git/gremy/raid-sudoku
+   git clone https://github.com/thedevrems/project-sudoku.git
    ```
 ## Testing the Project:
 Here are some commands to test our project :
