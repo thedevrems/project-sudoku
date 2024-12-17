@@ -16,5 +16,5 @@ const (
 
 // Fonction qui s'occupe d'afficher une erreur, avec le nom de l'erreur : typeOfError
 func PrintError(typeOfError string) {
-	fmt.Println(Red, "Erreur :", Reset, typeOfError)
+	fmt.Println(Red, "Error :", Reset, typeOfError)
 }
